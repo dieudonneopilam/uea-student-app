@@ -29,7 +29,7 @@ Alors comme c'était ecrit dans la methodologie vous allez clone depuis votre or
 
 1. **Cloner le projet**
    ```bash
-   git clone <url-du-repo>
+   git clone https://github.com/dieudonneopilam/uea-student-app.git
    cd student
    ```
 
