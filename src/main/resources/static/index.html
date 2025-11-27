@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEA Student Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <nav class="bg-blue-600 text-white shadow">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-xl font-bold">UEA Student Services</h1>
+                    <div class="flex gap-4">
+                        <a href="/students" class="hover:text-blue-200">Étudiants</a>
+                        <a href="/courses" class="hover:text-blue-200">Cours</a>
+                        <a href="/enroll" class="hover:text-blue-200">Inscription</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container mx-auto px-4 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Système d'inscription aux cours</h2>
+                <p class="text-gray-600 text-lg">Gestion simple des étudiants et des cours</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Étudiants</h3>
+                    <p class="text-gray-600 mb-4">Consulter la liste des étudiants</p>
+                    <a href="/students" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Voir les étudiants
+                    </a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Cours</h3>
+                    <p class="text-gray-600 mb-4">Consulter la liste des cours</p>
+                    <a href="/courses" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Voir les cours
+                    </a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Inscription</h3>
+                    <p class="text-gray-600 mb-4">Inscrire un étudiant à un cours</p>
+                    <a href="/enroll" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Inscrire
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Documentation API</h3>
+                <p class="text-gray-600 mb-4">Accéder à la documentation Swagger de l'API REST</p>
+                <a href="/swagger-ui.html" class="inline-block bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800">
+                    Ouvrir Swagger UI
+                </a>
+            </div>
+        </main>
+
+        <footer class="bg-gray-800 text-white mt-12 py-6">
+            <div class="container mx-auto px-4 text-center">
+                <p>&copy; 2024 UEA Student Services</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

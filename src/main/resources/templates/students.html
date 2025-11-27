@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étudiants - UEA Student Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Liste des étudiants</h1>
+            <nav class="flex gap-2 mb-6">
+                <a href="/students" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">Étudiants</a>
+                <a href="/courses" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 text-sm">Cours</a>
+                <a href="/enroll" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 text-sm">Inscription</a>
+                <a href="/swagger-ui.html" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 text-sm">API</a>
+            </nav>
+        </div>
+
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">ID</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Nom</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Post-nom</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Matricule</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Faculté</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Email</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Cours</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr th:if="${students.isEmpty()}">
+                            <td colspan="7" class="px-6 py-8 text-center text-gray-500">Aucun étudiant enregistré</td>
+                        </tr>
+                        <tr th:each="student : ${students}" class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900" th:text="${student.id}"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900" th:text="${student.nom}"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900" th:text="${student.postNom}"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" th:text="${student.matricule}"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" th:text="${student.faculte}"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" th:text="${student.email}"></td>
+                            <td class="px-6 py-4 text-sm">
+                                <span th:if="${student.courseCodes == null or student.courseCodes.isEmpty()}" 
+                                      class="text-gray-400 italic">Aucun</span>
+                                <span th:each="courseCode : ${student.courseCodes}" 
+                                      class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded mr-1 mb-1"
+                                      th:text="${courseCode}"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
